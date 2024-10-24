@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Přidat koně</title>
+  </head>
+  <body>
+    <h1>Přidat nového koně</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Přidat</button>
+    </form>
+  </body>
+</html>
