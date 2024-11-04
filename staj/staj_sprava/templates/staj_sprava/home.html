@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Správa stáje</title>
+    <link rel="stylesheet" href="{% static 'staj_sprava/styles.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Správa stáje</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'horse_list' %}">Seznam koní</a></li>
+          <li><a href="{% url 'add_horse' %}">Přidat koně</a></li>
+          <li><a href="{% url 'add_care' %}">Přidat péči</a></li>
+          <li><a href="{% url 'add_training' %}">Přidat trénink</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Vítejte v aplikaci pro správu stáje</h2>
+        <p>
+          Zde můžete sledovat krmení, péči, zdravotní prohlídky a tréninky svých
+          koní.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 Správa stáje. Všechna práva vyhrazena.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detail koně</title>
+  </head>
+  <body>
+    <h1>Detail koně: {{ horse.name }}</h1>
+    <p>Plemeno: {{ horse.breed }}</p>
+    <p>Věk: {{ horse.age }}</p>
+    <p>Zdravotní stav: {{ horse.health_status }}</p>
+    <p>Poslední kontrola veterináře: {{ horse.last_vet_check }}</p>
+    <p>Poznámky: {{ horse.notes }}</p>
+    <a href="{% url 'horse_list' %}">Zpět na seznam koní</a>
+  </body>
+</html>

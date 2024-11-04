@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seznam koní</title>
+  </head>
+  <body>
+    <h1>Seznam koní</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Jméno</th>
+          <th>Plemeno</th>
+          <th>Věk</th>
+          <th>Zdravotní stav</th>
+          <th>Poslední kontrola veterináře</th>
+          <th>Poznámky</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for horse in horses %}
+        <tr>
+          <td>{{ horse.name }}</td>
+          <td>{{ horse.breed }}</td>
+          <td>{{ horse.age }}</td>
+          <td>{{ horse.health_status }}</td>
+          <td>{{ horse.last_vet_check }}</td>
+          <td>{{ horse.notes }}</td>
+          <td><a href="{% url 'horse_detail' horse.id %}">Zobrazit</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="7">Žádní koně nebyli nalezeni.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url 'add_horse' %}">Přidat nového koně</a>
+  </body>
+</html>

@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import HorseForm, CareForm, TrainingForm
+from .models import Horse
+from django.shortcuts import get_object_or_404
+
 
 def add_horse(request):
     if request.method == 'POST':
@@ -30,4 +33,15 @@ def add_training(request):
     else:
         form = TrainingForm()
     return render(request, 'staj_sprava/add_training.html', {'form': form})
+  
+def horse_list(request):
+    horses = Horse.objects.all()  # Načte všechny koně z databáze
+    return render(request, 'staj_sprava/horse_list.html', {'horses': horses})
+  
+def horse_detail(request, horse_id):
+    horse = get_object_or_404(Horse, id=horse_id)
+    return render(request, 'staj_sprava/horse_detail.html', {'horse': horse})
+  
+def home(request):
+    return render(request, 'staj_sprava/home.html')
 
