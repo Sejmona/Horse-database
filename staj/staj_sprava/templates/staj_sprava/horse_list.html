@@ -1,11 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Seznam koní</title>
+    <link rel="stylesheet" href="{% static 'staj_sprava/styles.css' %}" />
   </head>
-  <body>
-    <h1>Seznam koní</h1>
-    <table border="1">
+  <body class="horse_list_img">
+    <h1 class="page-title">Seznam koní</h1>
+    <table class="horse-table" border="1">
       <thead>
         <tr>
           <th>Jméno</th>
@@ -14,7 +16,7 @@
           <th>Zdravotní stav</th>
           <th>Poslední kontrola veterináře</th>
           <th>Poznámky</th>
-          <th>Detail</th>
+          <th>Akce</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +28,14 @@
           <td>{{ horse.health_status }}</td>
           <td>{{ horse.last_vet_check }}</td>
           <td>{{ horse.notes }}</td>
-          <td><a href="{% url 'horse_detail' horse.id %}">Zobrazit</a></td>
+          <td>
+            <a href="{% url 'horse_detail' horse.id %}">Zobrazit</a>
+            <a
+              href="{% url 'delete_horse' horse.id %}"
+              onclick="return confirm('Opravdu chcete odebrat tohoto koně?');"
+              >Odebrat</a
+            >
+          </td>
         </tr>
         {% empty %}
         <tr>
@@ -36,5 +45,8 @@
       </tbody>
     </table>
     <a href="{% url 'add_horse' %}">Přidat nového koně</a>
+    <br />
+    <a href="{% url 'home' %}">Zpět na hlavní stránku</a>
+    <!-- Předpokládáme, že 'home' je název URL pro hlavní stránku -->
   </body>
 </html>

@@ -8,4 +8,6 @@ urlpatterns = [
     path('add_training/', views.add_training, name='add_training'),
     path('horses/', views.horse_list, name='horse_list'),  # Seznam koní
     path('horses/<int:horse_id>/', views.horse_detail, name='horse_detail'),  # Detail koně
+    path('horses/', views.horse_list, name='horse_list'),
+    path('horses/<int:horse_id>/delete/', views.delete_horse, name='delete_horse'),
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import HorseForm, CareForm, TrainingForm
 from .models import Horse
 from django.shortcuts import get_object_or_404
@@ -44,4 +44,23 @@ def horse_detail(request, horse_id):
   
 def home(request):
     return render(request, 'staj_sprava/home.html')
+# views.py
+from django.shortcuts import render, get_object_or_404
+from .models import Horse
+
+def horse_detail(request, horse_id):
+    horse = get_object_or_404(Horse, id=horse_id)
+    trainings = horse.trainings.all()
+    care_sessions = horse.care_sessions.all()
+    return render(request, 'staj_sprava/horse_detail.html', {
+        'horse': horse,
+        'trainings': trainings,
+        'care_sessions': care_sessions
+    })
+    
+def delete_horse(request, horse_id):
+    horse = get_object_or_404(Horse, id=horse_id)
+    horse.delete()
+    return redirect('horse_list')  # Předpokládáme, že 'horse_list' je název URL pro seznam koní
+
 

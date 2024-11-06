@@ -3,14 +3,18 @@
 /* Základní styly pro celou aplikaci */
 body {
   font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/*styly home page*/
+.home-img {
   background-image: url("https://www.nhkladruby.cz/data/filecache/e0/slide.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  color: #333;
-  margin: 0;
-  padding: 0;
 }
 
 
@@ -72,9 +76,6 @@ h2 {
 
 }
 
-
-
-
 /* Zápatí stránky */
 footer {
   background-color: #333;
@@ -84,4 +85,80 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/*style Horse list*/
+/*styl foto*/
+.horse_list_img {
+  background-image: url("https://www.nhkladruby.cz/data/filecache/5f/slide-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
+/* Stylování nadpisu stránky */
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+/* Tabulka */
+.horse-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.horse-table thead tr {
+  background-color: #4a4a4a;
+  /* Tmavé pozadí pro hlavičku */
+  color: white;
+  /* Bílý text v hlavičce */
+}
+
+.horse-table th,
+.horse-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.horse-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+  /* Střídavé řádky */
+}
+
+.horse-table tbody tr:hover {
+  background-color: #e0e0e0;
+  /* Zvýraznění při najetí */
+}
+
+/* Odkaz pro detail koně */
+.detail-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
+/* Tlačítko pro přidání nového koně */
+.add-horse-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.add-horse-btn:hover {
+  background-color: #45a049;
 }
