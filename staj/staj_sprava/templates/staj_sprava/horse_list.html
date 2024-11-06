@@ -44,9 +44,10 @@
         {% endfor %}
       </tbody>
     </table>
-    <a href="{% url 'add_horse' %}">Přidat nového koně</a>
+    <a href="{% url 'add_horse' %}" class="button button-add"
+      >Přidat nového koně</a
+    >
     <br />
-    <a href="{% url 'home' %}">Zpět na hlavní stránku</a>
-    <!-- Předpokládáme, že 'home' je název URL pro hlavní stránku -->
+    <a href="{% url 'home' %}" class="button">Zpět na hlavní stránku</a>
   </body>
 </html>

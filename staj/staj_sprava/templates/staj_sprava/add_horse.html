@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>Přidat nového koně</h1>
-    <form method="post">
+    <form method="post" class="add-horse-form">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit">Přidat</button>
     </form>
