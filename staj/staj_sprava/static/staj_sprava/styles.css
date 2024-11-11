@@ -196,10 +196,21 @@ h1 {
 }
 
 /* Styl pro formulář na stránce přidání koně */
+.add_horse_img {
+  background-image: url("https://www.nhkladruby.cz/data/filecache/30/topfoto2_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.add_horse_title {
+  padding: 30px;
+}
+
 .add-horse-form {
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  margin-left: 20px;
+  padding: 30px;
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -249,4 +260,55 @@ h1 {
 
 .add-horse-form button:hover {
   background-color: #45a049;
+}
+
+.add_care_img {
+  background-image: url("https://www.nhkladruby.cz/data/filecache/b2/sluzby-topfoto2.jpg");
+}
+
+.add_training_img {
+  background-image: url("https://www.nhkladruby.cz/data/filecache/f9/Kladruby-jarni-pano_18a.jpg");
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.form-container h2 {
+  text-align: center;
+  font-family: 'Georgia', serif;
+
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5A9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: #489;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 15px;
+  color: #5A9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-back:hover {
+  color: #489;
 }

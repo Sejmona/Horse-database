@@ -1,13 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Přidat trénink</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'staj_sprava/styles.css' %}"
+    />
   </head>
-  <body>
-    <h1>Přidat trénink pro koně</h1>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Přidat</button>
-    </form>
+  <body class="add_training_img">
+    {% block content %}
+    <div class="form-container">
+      <h2>Přidat trénink{{ model_name }}</h2>
+      <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn-submit">Uložit</button>
+      </form>
+      <a href="{% url 'horse_list' %}" class="btn-back">Zpět na seznam koní</a>
+    </div>
+    {% endblock %}
   </body>
 </html>

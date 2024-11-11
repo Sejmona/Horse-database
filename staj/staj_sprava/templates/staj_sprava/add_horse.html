@@ -1,10 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Přidat koně</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'staj_sprava/styles.css' %}"
+    />
   </head>
-  <body>
-    <h1>Přidat nového koně</h1>
+  <body class="add_horse_img">
+    <h1 class="add_horse_title">Přidat nového koně</h1>
     <form method="post" class="add-horse-form">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit">Přidat</button>
