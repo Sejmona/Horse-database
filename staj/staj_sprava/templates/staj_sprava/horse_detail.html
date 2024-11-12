@@ -6,61 +6,68 @@
     <link rel="stylesheet" href="{% static 'staj_sprava/styles.css' %}" />
   </head>
   <body>
-    <h1>{{ horse.name }}</h1>
-    <p><strong>Plemeno:</strong> {{ horse.breed }}</p>
-    <p><strong>Věk:</strong> {{ horse.age }}</p>
-    <p><strong>Zdravotní stav:</strong> {{ horse.health_status }}</p>
-    <p>
-      <strong>Poslední kontrola veterináře:</strong> {{ horse.last_vet_check }}
-    </p>
-    <p><strong>Poznámky:</strong> {{ horse.notes }}</p>
+    <div class="container_detail">
+      <h1 class="page-title">{{ horse.name }}</h1>
+      <div class="horse-details">
+        <p><strong>Plemeno:</strong> {{ horse.breed }}</p>
+        <p><strong>Věk:</strong> {{ horse.age }}</p>
+        <p><strong>Zdravotní stav:</strong> {{ horse.health_status }}</p>
+        <p>
+          <strong>Poslední kontrola veterináře:</strong> {{ horse.last_vet_check
+          }}
+        </p>
+        <p><strong>Poznámky:</strong> {{ horse.notes }}</p>
+      </div>
 
-    <h2>Tréninky</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Datum</th>
-          <th>Délka</th>
-          <th>Popis</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for training in trainings %}
-        <tr>
-          <td>{{ training.date }}</td>
-          <td>{{ training.duration }}</td>
-          <td>{{ training.description }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="3">Žádné tréninky nejsou k dispozici.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+      <h2 class="detail_title">Tréninky</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Délka</th>
+            <th>Popis</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for training in trainings %}
+          <tr>
+            <td>{{ training.date }}</td>
+            <td>{{ training.duration }}</td>
+            <td>{{ training.notes }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="3">Žádné tréninky nejsou k dispozici.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 
-    <h2>Péče</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Datum</th>
-          <th>Popis</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for care in care_sessions %}
-        <tr>
-          <td>{{ care.date }}</td>
-          <td>{{ care.description }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="2">Žádné záznamy péče nejsou k dispozici.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+      <h2 class="detail_title">Péče</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Popis</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for care in care_sessions %}
+          <tr>
+            <td>{{ care.date }}</td>
+            <td>{{ care.notes }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2">Žádné záznamy péče nejsou k dispozici.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 
-    <a href="{% url 'horse_list' %}">Zpět na seznam koní</a>
+      <a href="{% url 'horse_list' %}" class="back-button"
+        >Zpět na seznam koní</a
+      >
+    </div>
   </body>
 </html>

@@ -112,6 +112,7 @@ footer {
   border-collapse: collapse;
   margin-bottom: 20px;
   font-size: 16px;
+  color: black;
 }
 
 .horse-table thead tr {
@@ -129,12 +130,12 @@ footer {
 }
 
 .horse-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  color: black;
   /* Střídavé řádky */
 }
 
 .horse-table tbody tr:hover {
-  background-color: #e0e0e0;
+  color: black;
   /* Zvýraznění při najetí */
 }
 
@@ -311,4 +312,77 @@ h1 {
 
 .btn-back:hover {
   color: #489;
+}
+
+/* Nastavení detail koně*/
+
+
+.container_detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  font-size: 2em;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.horse-details p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Tabulka */
+.detail_title {
+  color: black;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  min-width: 400px;
+  background-color: #333;
+  color: #fff;
+}
+
+.styled-table thead tr {
+  background-color: #444;
+  color: #fff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #555;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #444;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #555;
+}
+
+/* Odkaz */
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
 }
