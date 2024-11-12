@@ -54,10 +54,7 @@ nav ul li a:hover {
 
 /* Hlavní obsah stránky */
 main {
-
-
   padding: 20px;
-
   margin: 20px auto;
   max-width: 800px;
 
@@ -108,11 +105,11 @@ footer {
 
 /* Tabulka */
 .horse-table {
-  width: 100%;
+  width: 60%;
   border-collapse: collapse;
   margin-bottom: 20px;
   font-size: 16px;
-  color: black;
+  margin-left: 10px;
 }
 
 .horse-table thead tr {
@@ -129,10 +126,7 @@ footer {
   text-align: left;
 }
 
-.horse-table tbody tr:nth-child(even) {
-  color: black;
-  /* Střídavé řádky */
-}
+
 
 .horse-table tbody tr:hover {
   color: black;
@@ -141,7 +135,7 @@ footer {
 
 /* Odkaz pro detail koně */
 .detail-link {
-  color: #3498db;
+  color: #f32d2d;
   text-decoration: none;
 }
 
@@ -158,6 +152,7 @@ footer {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  margin-left: 20px;
 }
 
 .add-horse-btn:hover {
@@ -325,7 +320,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.page-title {
+.page-title-detail {
   font-size: 2em;
   color: #444;
   text-align: center;
