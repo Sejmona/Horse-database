@@ -9,6 +9,20 @@
   </head>
   <body class="home-img">
     <header>
+      <script>
+        function openLoginModal() {
+          document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function closeLoginModal() {
+          document.getElementById('loginModal').style.display = 'none';
+        }
+      </script>
+      <div class="header">
+        <button onclick="openLoginModal()">Přihlásit</button>
+        <button onclick="logout()">Odhlásit</button>
+      </div>
+
       <h1>Sprána Národního hřebčína Kladruby nad Labem</h1>
       <nav>
         <ul>
