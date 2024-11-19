@@ -11,8 +11,10 @@ def add_horse(request):
     if request.method == 'POST':
         form = HorseForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('horse_list')  # Přesměrování na seznam koní po úspěšném přidání
+            horse = form.save(commit=False)
+            horse.user = request.user  # Nastav aktuálního přihlášeného uživatele
+            horse.save()
+            return redirect('horse_list')  # Přesměrování na seznam koní
     else:
         form = HorseForm()
     return render(request, 'staj_sprava/add_horse.html', {'form': form})

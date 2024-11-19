@@ -6,7 +6,7 @@ class Horse(models.Model):
     breed = models.CharField(max_length=100)
     age = models.IntegerField()
     health_status = models.TextField()  # Zdravotní stav koně
-    last_vet_check = models.DateField()  # Datum poslední veterinární prohlídky
+    last_vet_check = models.DateField(null=True, blank=True, verbose_name="Poslední kontrola veterináře")  # Datum poslední veterinární prohlídky
     notes = models.TextField(blank=True, null=True)  # Poznámky
     user = models.ForeignKey(User, on_delete=models.CASCADE) # další pole pro koně
     
