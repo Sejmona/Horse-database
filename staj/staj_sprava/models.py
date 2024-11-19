@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Horse(models.Model):
     name = models.CharField(max_length=100)
@@ -7,6 +8,7 @@ class Horse(models.Model):
     health_status = models.TextField()  # Zdravotní stav koně
     last_vet_check = models.DateField()  # Datum poslední veterinární prohlídky
     notes = models.TextField(blank=True, null=True)  # Poznámky
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # další pole pro koně
     
 
     def __str__(self):

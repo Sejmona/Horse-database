@@ -19,8 +19,10 @@
         }
       </script>
       <div class="header">
-        <button onclick="openLoginModal()">Přihlásit</button>
-        <button onclick="logout()">Odhlásit</button>
+        <nav class="header-links">
+          <a href="{% url 'login' %}">Přihlásit</a>
+          <a href="{% url 'logout' %}">Odhlásit</a>
+        </nav>
       </div>
 
       <h1>Sprána Národního hřebčína Kladruby nad Labem</h1>

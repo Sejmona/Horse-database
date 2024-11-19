@@ -38,7 +38,7 @@ def add_training(request):
     return render(request, 'staj_sprava/add_training.html', {'form': form})
   
 def horse_list(request):
-    horses = Horse.objects.all()  # Načte všechny koně z databáze
+    horses = Horse.objects.filter(user=request.user)  # Filtruje koně podle přihlášeného uživatele
     return render(request, 'staj_sprava/horse_list.html', {'horses': horses})
   
 def horse_detail(request, horse_id):
@@ -85,7 +85,7 @@ def login_view(request):
             return redirect('home')
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'staj_sprava/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)

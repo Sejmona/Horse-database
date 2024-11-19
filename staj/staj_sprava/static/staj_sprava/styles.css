@@ -20,7 +20,6 @@ body {
 
 /* Styly pro hlavičku */
 header {
-  /*background-color: #4CAF50;*/
   color: white;
   padding: 10px 0;
   text-align: center;
@@ -31,6 +30,31 @@ header h1 {
   padding-bottom: 20px;
   margin: 0;
 }
+
+/* Stylování odkazu přihlásit odhlásit*/
+.header-links {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.header-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  margin-left: 15px;
+
+}
+
+.header-links a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+
+}
+
 
 .modal {
   display: none;

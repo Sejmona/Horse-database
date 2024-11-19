@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Přihlášení</title>
+    <link rel="stylesheet" href="{% static 'staj_sprava/styles.css' %}" />
+  </head>
+  <body class="button_prihlasit">
+    <h2>Přihlásit se</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Přihlásit</button>
+    </form>
+  </body>
+</html>
